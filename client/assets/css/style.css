@@ -1,0 +1,51 @@
+.m-bottom {
+  margin-bottom: 1rem;
+}
+
+.m-bottom-zero {
+  margin-bottom: 0rem;
+}
+
+.m-top {
+  margin-top: 1rem;
+}
+
+.m-right {
+  margin-right: 1rem;
+}
+
+.p-arround {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.navbar-p-arround {
+  padding-left: 0rem;
+  padding-right: 0rem;
+}
+
+.bdr-img {
+  border: 1px solid rgba(0,0,0,.125)
+}
+
+.footer-top {
+  border-top: 1px solid rgba(0,0,0,.125);
+  margin-top: 2rem;
+}
+
+.prgf-bold {
+  font-weight: bold;
+}
+
+.prgf-red {
+  color: red;
+}
+
+.footer-text {
+  font-weight: 300;
+  color: #ffffff;
+}
+
+.icon-size {
+  font-size: 20px
+}
