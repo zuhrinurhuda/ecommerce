@@ -1,31 +1,27 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Hello, world!</title>
+    <title>Ecommerce Project</title>
     <!-- Meta Tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <![endif]-->
-
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-
-    <!-- Custom CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <!-- Material Icon -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="/assets/css/style.css">
-
-    <!-- Vue -->
+    <!-- Vue JS -->
     <script src="https://unpkg.com/vue"></script>
-
-    <!-- Axios -->
+    <!-- NPM Axios -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
-    <!-- Header -->
     <div id="app" class="">
+      <!-- Header -->
       <header  class="container-fluid bg-light">
         <div class="container">
           <div class="row p-arround">
@@ -68,11 +64,9 @@
             </div>
             <!-- End Navbar -->
           </div>
-
         </div>
       </header>
       <!-- End Header -->
-
       <!-- Container -->
       <main class="container">
         <!-- Row -->
@@ -88,9 +82,8 @@
             </div>
           </div>
           <!-- End Category List -->
-
-          <!-- Slide -->
           <div class="col-md-9">
+            <!-- Slider -->
             <div id="carouselExampleIndicators" class="carousel slide m-top m-bottom" data-ride="carousel">
               <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -117,13 +110,13 @@
                 <span class="sr-only">Next</span>
               </a>
             </div>
-            <!-- Most Popular Products Title -->
+            <!-- End Slider -->
+            <!-- Alert -->
             <div class="alert alert-danger" role="alert">
               MOST POPULAR ITEM
             </div>
-            <!-- End Most Popular Products Title -->
-
-            <!-- Most Popular Products -->
+            <!-- End Alert -->
+            <!-- Products -->
             <div class="card-deck m-bottom">
               <div class="card" v-for="book in books">
                 <img class="card-img-top" src="/assets/img/Starley.jpg" alt="Card image cap">
@@ -134,29 +127,22 @@
                   <p class="card-text"><small class="prgf-red">{{book.category}}</small></p>
                   <h4 class="card-title">Rp. {{book.price}}</h4>
                   <!-- Button trigger modal -->
-                  <!-- <button type="button" class="btn btn-outline-primary btn-sm">Quick Shop</button> -->
                   <button type="button" class="btn btn-primary btn-sm" v-on:click="addToChart(book)">Add to Chart</button>
-                  <!-- <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal">
-                    Quick Shop
-                  </button> -->
                   <!-- End Button trigger modal -->
                 </div>
               </div>
             </div>
-            <!-- End Most Popular Products -->
-
+            <!-- End Products -->
             <!-- Brand Banner -->
             <div class="card m-bottom">
               <img class="card-img-top" src="/assets/img/soaring.png" alt="Card image cap">
             </div>
             <!-- End Brand Banner -->
           </div>
-          <!-- End Slide -->
         </div>
         <!-- End Row -->
       </main>
       <!-- End Container -->
-
       <!-- Footer -->
       <footer class="footer footer-top">
         <div class="container-fluid bg-light">
@@ -201,7 +187,6 @@
         </div>
       </footer>
       <!-- End Footer -->
-
       <!-- Modal -->
       <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
@@ -279,103 +264,15 @@
         </div>
       </div>
       <!-- End Modal -->
-      <!-- Modal -->
-      <!-- <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title" id="exampleModalLabel">ITEM NAME</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <div class="container-fluid">
-                <div class="row">
-                  <div class="col-md-5">
-                    <img class="bdr-img" src="/assets/img/Starley.jpg" alt="">
-                  </div>
-                  <div class="col-md-7">
-                    <p class=""><span class="prgf-bold">Kode: </span>Item# 10042819</p>
-                    <p class=""><span class="prgf-bold">Desc: </span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan ultrices sem, ac mattis libero sodales vel. Donec nec velit lacus. Pellentesque nec ligula in magna tempus facilisis nec in metus. Fusce eget facilisis nisi. Aliquam condimentum ex dolor, in bibendum velit suscipit ut.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-              <button type="button" class="btn btn-primary">Add to Chart</button>
-            </div>
-          </div>
-        </div>
-      </div> -->
-      <!-- End Modal -->
     </div>
 
-    <script type="text/javascript">
-    var app = new Vue({
-      el: '#app',
-      data: {
-        books: [],
-        message: 'Hello World',
-        itemLists: [],
-        itemCount: 0,
-        carts: [],
-        total: 0
-      },
-      methods: {
-        addToChart: function(book) {
-          if(this.carts.length == 0) {
-            this.carts.push({
-              title: book.title,
-              qty: 1,
-              price: book.price,
-              subTotal: book.price
-            })
-          } else {
-            let checkUnique = function(el) {
-              return el.title === book.title
-            }
-            let uniqueIndex = this.carts.findIndex(checkUnique)
-            if(uniqueIndex === -1) {
-              this.carts.push({
-                title: book.title,
-                qty: 1,
-                price: book.price,
-                subTotal: book.price
-              })
-            } else {
-              this.carts[uniqueIndex].qty++
-              this.carts[uniqueIndex].subTotal = this.carts[uniqueIndex].price * this.carts[uniqueIndex].qty
-            }
-          }
-          this.itemCount++
-
-          let total = 0
-          this.carts.forEach(cart => {
-            total += cart.subTotal
-          })
-
-          this.total = total
-
-          console.log(this.total);
-        }
-      },
-      created: function() {
-        // let self = this
-        axios.get('http://localhost:3000/api/books')
-        .then(response => {
-          this.books = response.data
-          // console.log(this.books[0]);
-        });
-      },
-    })
-    </script>
-    <!-- Bootstrap JavaScript Dependencies-->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-    <!-- End Bootstrap JavaScript Dependencies -->
+    <!-- Vue JS-->
+    <script src="/assets/js/vue.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
   </body>
 </html>

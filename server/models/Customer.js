@@ -3,7 +3,6 @@ mongoose.connect('mongodb://localhost/library')
 
 var customerSchema = mongoose.Schema({
   name:  String,
-  memberId: String,
   address: String,
   zipcode: String,
   phone: {

@@ -3,19 +3,24 @@ mongoose.connect('mongodb://localhost/library');
 const Schema = mongoose.Schema;
 
 var transactionSchema = mongoose.Schema({
-  member:  {
+  customer:  {
     type: Schema.Types.ObjectId,
     ref: 'Customer'
   },
-  days: Number,
-  out_date: Date,
-  due_date: Date,
-  in_date: Date,
-  fine: Number,
-  booklist: [{
-    type: Schema.Types.ObjectId,
-    ref: 'Book'
-  }]
+  transactionDate: {
+    type: Date,
+    default: Date.now
+  },
+  itemList: [{
+    itemId: {
+      type: Schema.Types.ObjectId,
+      ref: 'Book'
+    },
+    name: String,
+    quantity: Number,
+    subTotal: Number,
+  }],
+  total: Number
 });
 
 const Transaction = mongoose.model('Transaction', transactionSchema);
