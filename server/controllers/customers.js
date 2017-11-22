@@ -8,13 +8,8 @@ let getAll = (req, res) => {
 }
 
 let create = (req, res) => {
-  let customer = new Customer({
-    name:  req.body.name,
-    memberId: req.body.memberId,
-    address: req.body.address,
-    zipcode: req.body.zipcode,
-    phone: req.body.phone
-  })
+  // console.log(req.body.customer);
+  let customer = new Customer(req.body.customer)
 
   customer.save()
   .then(result => res.send(result))

@@ -2,12 +2,37 @@ const mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost/library')
 
 var customerSchema = mongoose.Schema({
-  name:  String,
-  address: String,
-  zipcode: String,
+  name: {
+    type: String,
+    default: null
+  },
+  username: {
+    type: String,
+    default: null
+  },
+  password: {
+    type: String,
+    default: null
+  },
+  address: {
+    type: String,
+    default: null
+  },
+  zipcode: {
+    type: String,
+    default: null
+  },
   phone: {
     type: String,
     minlength: 6
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now
+  },
+  updateAt: {
+    type: Date,
+    default: null
   }
 });
 
