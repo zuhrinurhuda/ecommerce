@@ -13,7 +13,7 @@ let create = (req, res) => {
     title: req.body.title,
     author: req.body.author,
     category: req.body.category,
-    stock: req.body.stock,
+    // stock: req.body.stock,
     price: req.body.price
   })
 
@@ -30,7 +30,7 @@ let update = (req, res) => {
     book.title = req.body.title || book.title
     book.author = req.body.author || book.author
     book.category = req.body.category || book.category
-    book.stock = req.body.stock || book.stock
+    // book.stock = req.body.stock || book.stock
     book.price = req.body.price || book.price
 
     book.save()

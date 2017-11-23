@@ -1,12 +1,16 @@
 const mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost/library')
+
+// mongoose.Promise = global.Promise
+// mongoose.connection.once('open', () => {
+//   console.log('connection success')
+// }).on(err => console.log(err))
 
 var bookSchema = mongoose.Schema({
   isbn:  String,
   title: String,
   author: String,
   category: String,
-  stock: Number,
+  // stock: Number,
   price: Number
 });
 

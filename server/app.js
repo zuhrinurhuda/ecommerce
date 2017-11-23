@@ -13,6 +13,11 @@ var transactions = require('./routes/transactions');
 
 var app = express();
 
+// MongooDB
+const mongoose = require('mongoose')
+require('dotenv').config()
+mongoose.connect(`mongodb://zuhri:${process.env.MONGO_PASSWORD}@cluster0-shard-00-00-67zih.mongodb.net:27017,cluster0-shard-00-01-67zih.mongodb.net:27017,cluster0-shard-00-02-67zih.mongodb.net:27017/ecommerce?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin`)
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
