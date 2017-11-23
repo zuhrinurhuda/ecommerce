@@ -50,7 +50,7 @@
             </div>
             <div class="col-md-3">
               <nav class="nav justify-content-end">
-                <a class="navbar navbar-p-arround">Login</a>
+                <a class="navbar navbar-p-arround" data-toggle="modal" data-target="#loginModal">Login</a>
                 <a class="navbar">/</a>
                 <a class="navbar navbar-p-arround" data-toggle="modal" data-target="#registerModal">Register</a>
               </nav>
@@ -192,7 +192,7 @@
         <div class="modal-dialog modal-lg" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h4 class="modal-title" id="exampleModalLabel">ITEM NAME</h4>
+              <h4 class="modal-title">ITEM NAME</h4>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -240,13 +240,12 @@
         </div>
       </div>
       <!-- End Checkout Modal -->
-      <!--  -->
-      <!-- Small modal -->
-      <div class="modal fade bd-example-modal-md" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
-        <div class="modal-dialog modal-md" role="document">
+      <!-- Register modal -->
+      <div class="modal fade bd-example-modal-sm" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h4 class="modal-title" id="exampleModalLabel">REGISTER</h4>
+              <h4 class="modal-title">REGISTER</h4>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -257,30 +256,12 @@
                   <form>
                     <div class="form-row">
                       <div class="form-group col-md-12">
-                        <label for="inputName">Name</label>
-                        <input type="text" class="form-control" id="inputName" placeholder="Name" v-model="customer.name">
+                        <label for="inputUsername">Username</label>
+                        <input type="text" class="form-control" id="inputUsername" placeholder="Username" v-model="dataCustomer.username">
                       </div>
-                      <div class="form-group col-md-6">
-                        <label for="inputEmail">Email</label>
-                        <input type="email" class="form-control" id="inputEmail" placeholder="Email" v-model="customer.username">
-                      </div>
-                      <div class="form-group col-md-6">
+                      <div class="form-group col-md-12">
                         <label for="inputPassword">Password</label>
-                        <input type="password" class="form-control" id="inputPassword" placeholder="Password" v-model="customer.password">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label for="inputAddress">Address</label>
-                      <input type="text" class="form-control" id="inputAddress" placeholder="Jl. Pagi Biar Sehat 123" v-model="customer.address">
-                    </div>
-                    <div class="form-row">
-                      <div class="form-group col-md-6">
-                        <label for="inputZip">Zip</label>
-                        <input type="text" class="form-control" id="inputZip" placeholder="Zipcode" v-model="customer.zipcode">
-                      </div>
-                      <div class="form-group col-md-6">
-                        <label for="inputPhone">Phone</label>
-                        <input type="text" class="form-control" id="inputPhone" placeholder="Phone Number" v-model="customer.phone">
+                        <input type="password" class="form-control" id="inputPassword" placeholder="Password" v-model="dataCustomer.password">
                       </div>
                     </div>
                     <button type="submit" class="btn btn-primary btn-block" v-on:click="register()">Register</button>
@@ -291,7 +272,40 @@
           </div>
         </div>
       </div>
-      <!--  -->
+      <!-- End Register modal -->
+      <!-- Login Modal -->
+      <div class="modal fade bd-example-modal-sm" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">LOGIN</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <div class="row">
+                  <form>
+                    <div class="form-row">
+                      <div class="form-group col-md-12">
+                        <label for="inputUsername">Username</label>
+                        <input type="text" class="form-control" id="inputUsername" placeholder="Username" v-model="dataLogin.username">
+                      </div>
+                      <div class="form-group col-md-12">
+                        <label for="inputPassword">Password</label>
+                        <input type="password" class="form-control" id="inputPassword" placeholder="Password" v-model="dataLogin.password">
+                      </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block" v-on:click="register()">Login</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Login Modal -->
     </div>
 
     <!-- Vue JS-->

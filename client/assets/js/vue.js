@@ -7,14 +7,14 @@ var app = new Vue({
     itemCount: 0,
     carts: [],
     total: 0,
-    customer: {
-      name: '',
+    dataCustomer: {
       username: '',
-      password: '',
-      address: '',
-      zipcode: '',
-      phone: ''
-    }
+      password: ''
+    },
+    dataLogin: {
+      username: '',
+      password: ''
+    },
   },
   methods: {
     addToChart: function(book) {
@@ -54,11 +54,11 @@ var app = new Vue({
         total += cart.subTotal
       })
       this.total = total
-
-      // console.log(this.carts);
     },
     checkOut: function() {
       let objTransactions = []
+
+      // loop for insert data transaction in array objTransactions
       this.carts.forEach(cart => {
         objTransactions.push({
           _id: cart.itemId,
@@ -71,11 +71,30 @@ var app = new Vue({
       .catch(err => console.log(err))
     },
     register: function() {
-      let customer = this.customer
-      // console.log(customer);
+      let customer = this.dataCustomer
+
       axios.post('http://localhost:3000/api/customers', {customer})
-      .then(response => console.log(response))
-      .catch(err => console.log(err))
+      .then(response => {
+        console.log(response)
+        alert('Register success. Please login to continue!')
+      })
+      .catch(err => {
+        console.log(err)
+        alert('Register failed!')
+      })
+    },
+    login: function() {
+      console.log(this.dataLogin);
+
+      // axios.post('http://localhost:3000/api/customers', {customer})
+      // .then(response => {
+      //   console.log(response)
+      //   alert('Register success. Please login to continue!')
+      // })
+      // .catch(err => {
+      //   console.log(err)
+      //   alert('Register failed!')
+      // })
     }
   },
   created: function() {

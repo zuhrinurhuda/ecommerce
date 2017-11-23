@@ -8,11 +8,11 @@ var customerSchema = mongoose.Schema({
   },
   username: {
     type: String,
-    default: null
+    required: true
   },
   password: {
     type: String,
-    default: null
+    required: true
   },
   address: {
     type: String,
